@@ -1,0 +1,458 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap');
+
+
+body {
+    margin: 0;
+    background: rgb(67,67,74);
+    background: -moz-linear-gradient(140deg, rgba(67,67,74,1) 0%, rgba(255,255,255,1) 100%);
+    background: -webkit-linear-gradient(140deg, rgba(67,67,74,1) 0%, rgba(255,255,255,1) 100%);
+    background: linear-gradient(140deg, rgba(67,67,74,1) 0%, rgba(255,255,255,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#43434a",endColorstr="#ffffff",GradientType=1);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    max-width: 100% !important;
+    padding: 0;
+    box-sizing: border-box;
+    overflow-x: hidden !important;
+    font-family: 'Roboto', sans-serif;
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+button:focus {
+    outline: none;
+}
+
+#content{
+    display: none;
+}
+
+.hourglass-wrapper{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1040;
+    background-color: rgb(71, 71, 71);
+    overflow: hidden;
+    opacity: 1;
+    transition: opacity 0.5s ease-out
+}
+
+.hourglass-wrapper.hidden {
+    opacity: 0;
+}
+
+.lds-hourglass {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .lds-hourglass:after {
+    content: " ";
+    display: block;
+    border-radius: 50%;
+    width: 0;
+    height: 0;
+    margin: 8px;
+    box-sizing: border-box;
+    border: 80px solid #fff;
+    border-color: #fff transparent #fff transparent;
+    animation: lds-hourglass 1.2s infinite;
+  }
+  @keyframes lds-hourglass {
+    0% {
+      transform: rotate(0);
+      animation-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+    50% {
+      transform: rotate(450deg);
+      animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
+    }
+    100% {
+      transform: rotate(900deg);
+    }
+  }
+
+/* Section Css */
+
+section {
+    margin: 60px auto;
+}
+
+section.dark {
+    transform: scaleX(1.02);
+    width: 100%;
+    background-color: #fff;
+}
+
+.section-title {
+    font-size: calc(2rem + 0.6vw);
+    margin: 0 0 4%;
+    letter-spacing: 1.2px;
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
+    color: #fff;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+section.dark .section-title {
+    color: #000;
+}
+
+/* NavBar CSS */
+
+.navbar {
+    width: 100vw;
+}
+
+.navbar  > .container-fluid {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.mobile-logo img{
+    
+    height: 50px;
+}
+
+.navbar-nav li {
+    min-width: 100px;
+    margin: 0 10px;
+}
+
+.navbar-brand img {
+    max-height: 80px;
+}
+
+.navbar-nav {
+    justify-content: space-between;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.nav-item a:hover{
+    transform: scale(0.95);
+    transition: transform 0.3s ease
+}
+
+.dropdown-item {
+    font-size: 1.2rem;
+    text-align: center;
+    border: 0;
+    margin: 5px 0;
+}
+
+/* Carousel */
+
+.carousel.slide {
+    height: 80vh;
+    width: 90vw;
+    margin: 120px auto 0;
+}  
+
+.carousel-inner {
+    max-height: 100%;
+    border-radius: 30px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4)
+}
+
+.carousel-inner img {
+   filter: opacity(0.7);
+   height: 1000px;
+}
+
+.main-logo {
+    position: absolute;
+    padding: 2% 5%;
+    background-color: #fff;
+    border-radius: 50px;
+    box-shadow: 0 5px 10px rgb(0 0 0 / 60%);
+    top: 50%;
+    left: 50%;
+    z-index: 3;
+    transform: translate(-50%, -50%);
+}
+
+.main-logo img {
+    max-height: 250px;
+    height: 30vh;
+    min-height: 200px;
+    min-width: 300px;
+    width: 40vw;
+    max-width: 500px;
+}
+
+.carousel-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -20%;
+    height: 100%;
+    width: 70%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    transform: skewX(-10deg);
+}
+
+
+
+.carousel-item {
+    position: initial;
+}
+
+.carousel-text {
+  position: absolute;
+  top: 50%;
+  left: 15%;
+  width: 20%;
+  transform: translateY(-50%);
+  color: white;
+  z-index: 100;
+}
+
+.carousel-text h2 {
+    font-size: calc(3rem + 0.6vw);
+    font-weight: bold;
+}
+
+.carousel-text p {
+    text-transform: uppercase;
+   font-size: 1.4rem;
+   line-height: 2;
+   letter-spacing: 0.8px;
+   font-weight: 500;
+}
+
+@media  (max-width: 768px) {
+    .main-logo{
+        width: 100%;
+        border-radius: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .carousel-item::after {
+        width: 100%;
+        left: 0;
+        transform: skewX(0deg);;
+    }
+
+    .carousel-text {
+        width: 80%;
+        top: 10;
+        left: 12%;
+        text-align: center;
+    }
+
+    .carousel-inner img {
+        object-fit: fill;
+     }
+     
+}
+/* Section 1 */ 
+
+.industry-card {
+    height: 100%;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4)
+}
+
+.industry-card i{
+    margin: 20px;
+    font-size: 4rem;
+}
+
+.industry-card h5 {
+    font-size: calc(1.8rem + 0.2vw);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.industry-card p {
+    font-size: calc(1.0rem + 0.2vw);
+}
+/* Section 2 */
+
+.cta-box {
+    padding: 2% 1vw 2%;
+}
+
+.cta-image img{
+   height: 300px;
+   width: 100%;
+   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+.cta-text {
+    padding: 10px 30px;
+    font-size: 1.3rem;
+}
+
+.about-button {
+    width: 100%;
+    font-size: 1.2rem;
+}
+/* Section 3 */
+
+.brand-card {
+    padding: 2% 5%;
+    min-width: 60%;
+    max-width: 100%;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+    overflow-y: hidden;
+}
+
+.brand-card.left{
+    transform: translateX(-300%);
+    transition: transform 0.5s ease-in-out;
+}
+
+.brand-card.right{
+    transform: translateX(300%);
+    transition: transform 0.5s ease-in-out;
+}
+
+.brand-card.brand-card.left.visable{
+    transform: translateX(0%);
+}
+
+.brand-card.brand-card.right.visable{
+    transform: translateX(0%);
+}
+
+.brand-card img {
+    width: 200px;
+    max-height: 100px;
+}
+
+
+.brand-card .card-body {
+  margin-right: 18%;
+  margin-left: 5%;
+  min-height: 120px;
+  height: 100%;
+}
+
+.card-title {
+    font-size: calc(1.8rem + 0.4vw);
+}
+
+.read-more {
+    content: '';
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3);
+    right: 0;
+    top: -5px;
+    height: 105%;
+    width: 15%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    font-size: 1.5rem;
+}
+
+.read-more i {
+    font-size: 2.2rem;
+}
+
+.brand-card a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.link-wrapper {
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.link-wrapper:hover {
+    transform: scale(1.1);
+    -webkit-transition: transform 0.5s ease-out, background-color 0.5s ease;
+    -moz-transition: transform 0.5s ease-out, background-color 0.5s ease;
+    -o-transition: transform 0.5s ease-out, background-color 0.5s ease;
+    transition: transform 0.5s ease-out, background-color 0.5s ease;
+    background-color: rgba(0, 155, 0, 0.3);
+}
+
+.link-wrapper a{
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.link-wrapper i {
+    font-size: 1.5rem;
+}
+
+/* Section 4 */
+
+.contact-box button {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.contact-body {
+    margin-top: 10px;
+    padding: 5%;
+    min-height: 250px;
+}
+
+.contact-body h4 {
+    margin-bottom: 10px;
+}
+.contact-body ul {
+    text-align: start;
+}
+
+.card-body ul li {
+    font-size: 1.2rem;
+}
+
+/* Footer */
+
+.footer {
+    padding: 1% 0;
+    background-color: #000;
+    margin: 0;
+    color: white;
+    font-size: 1.1rem;
+}
+
+.footer a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.footer .fab {
+    font-size: 3rem;
+    margin-right: 20px;
+}
+
+.rodo {
+    margin-top: 20px;
+}
+
+.allegro-logo  {
+    height: 50px;
+    width: 50px;
+}
