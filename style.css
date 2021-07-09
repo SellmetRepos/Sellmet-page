@@ -191,6 +191,7 @@ section.dark .section-title {
     min-width: 300px;
     width: 40vw;
     max-width: 500px;
+    filter: contrast(300%);
 }
 
 .carousel-item::after {
@@ -452,7 +453,220 @@ section.dark .section-title {
     margin-top: 20px;
 }
 
-.allegro-logo  {
-    height: 50px;
-    width: 50px;
+
+
+/* Partners CSS */
+
+.brand-section-title{
+    margin-bottom: 20px;
+    font-weight: 800;
+
+}
+
+
+.buisness-card-wrapper{
+    transition: flex 0.4s ease-in-out;
+    overflow: hidden;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+
+
+.buisness-card{
+    width: 100%;
+    min-height: 300px;
+    max-height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    border: none;
+    box-shadow: rgb(0 0 0 / 10%) 5px 5px 0px 0px
+}
+
+.brand-desc {
+    padding: 0;
+    position: absolute;
+    height: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    top: 50%;
+    left: 0%;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.brand-desc h5, .brand-desc span{
+    visibility: hidden;
+    margin-right: 30px;
+}
+
+.mobile-brand-desc {
+    display: none;
+}
+
+span.circle{
+    position: absolute;
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color: #fff;
+    bottom: -52%;
+    right: -14%;
+}
+
+span.circle i{
+    color: black;
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    font-size: 1.8rem;
+}
+
+
+.buisness-card-wrapper:hover {
+   flex-grow: 4;
+}
+
+.buisness-card-wrapper:hover .buisness-card .brand-desc {
+   height: 150px;
+   transition: height 0.4s ease;
+   padding: 1rem;
+}
+
+.buisness-card-wrapper:hover .buisness-card .brand-desc h5,
+.buisness-card-wrapper:hover .buisness-card .brand-desc span{
+    visibility: visible;
+    transition: visibility 0.3s ease-in 0.4s;
+}
+
+@media (max-width: 768px) {
+    .buisness-card-wrapper{
+        min-width: 50%;
+    }
+
+    .brand-desc, .brand-desc h5, .brand-desc span{
+        display: none;
+    }
+
+    .mobile-brand-desc{
+        display: block;
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        height: 20%;
+        left: 0;
+        padding: 5%;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        transition: height 0.6s ease;
+    }
+
+    .mobile-brand-desc i{
+        font-size: 2rem;
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        transition: transform 0.6s ease;
+    }
+
+    .mobile-brand-desc p, .mobile-brand-desc button {
+        display: none;
+    }
+
+    .mobile-brand-desc.active {
+        height: 50%;
+        
+    }
+
+    .mobile-brand-desc.active p,  
+    .mobile-brand-desc.active button  {
+        display: block;
+    }
+    
+    .mobile-brand-desc.active i {
+        transform: rotateZ(-180deg);
+    }
+    
+}
+
+@media (max-width: 425px) {
+    .buisness-card-wrapper{
+        min-width: 100%;
+    }
+
+    .brand-desc, .brand-desc h5, .brand-desc span{
+        display: none;
+    }
+}
+
+.allegro-box, .partners-contact-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2%;
+    padding: 3%;
+    border: 2px solid rgba(0, 0, 0, 0.4);
+    border-radius: 30px;
+    box-shadow: 0 2px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.allegro-box ul {
+    width: 100%;
+}
+
+.allegro-box ul li {
+    width: 100%;
+}
+
+.allegro-box ul li button {
+    width: 100%;
+    font-size: 1.2rem;
+    box-shadow: 0 2px 3px 3px rgba(0, 0, 0, 0.3);
+}
+
+.allegro-box ul li button {
+    width: 100%;
+    font-size: 1.3rem;
+    box-shadow: 0 2px 3px 3px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out, filter 0.3s ease-in-out;
+    font-weight: 800;
+}
+
+.allegro-btn{
+    background-color: #ff5900;
+    color: white;
+    filter: saturate(0.6);
+}
+
+.stanley-btn {
+    background-color: #ffd20d;
+    color: #000;
+    filter: saturate(0.6);
+}
+
+.allegro-box ul li button:hover {
+    transform: scale(0.98);
+    filter: saturate(1);
+}
+
+.allegro-box ul li button.allegro-btn:hover {
+   color: #fff;
+}
+
+@media (max-width: 756px) {
+    .allegro-box ul li button{
+        filter: saturate(0.8);
+    }
 }

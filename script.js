@@ -4,6 +4,10 @@ let cards = document.querySelectorAll('.brand-card')
 
 let wrapper = document.querySelector('.hourglass-wrapper')
 
+let brandCards = document.querySelectorAll('.mobile-brand-desc')
+
+// Sliders brands
+
 document.addEventListener('scroll', ()=> {
     cards.forEach((card,idx) => {
         if(window.innerHeight + window.pageYOffset > card.offsetTop){
@@ -13,6 +17,8 @@ document.addEventListener('scroll', ()=> {
         }
     })
 })
+
+// Loading wrapper
 
 var callback = function(){
    
@@ -34,4 +40,10 @@ var callback = function(){
     document.addEventListener("DOMContentLoaded", callback);
   }
 
- 
+//  Brand site
+
+brandCards.forEach(el =>{
+    el.addEventListener('click', ()=>{
+        el.classList.toggle('active')
+    })
+})
