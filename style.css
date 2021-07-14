@@ -28,6 +28,10 @@ button:focus {
     outline: none;
 }
 
+button:active {
+    outline: none;
+}
+
 #content{
     display: none;
 }
@@ -114,6 +118,7 @@ section.dark .section-title {
 
 .navbar {
     width: 100vw;
+    box-shadow: 0 3px 5px  rgba(0, 0, 0, 0.4);
 }
 
 .navbar  > .container-fluid {
@@ -170,6 +175,7 @@ section.dark .section-title {
 .carousel-inner img {
    filter: opacity(0.7);
    height: 1000px;
+   width: 100%;
 }
 
 .main-logo {
@@ -670,3 +676,152 @@ span.circle i{
         filter: saturate(0.8);
     }
 }
+
+/* Brand site CSS */
+.brand-background {
+    width: 100%;
+    padding: 0;
+    background: url(images/pedro-da-silva-cUIIJhUa538-unsplash.jpg);
+    background-size: 100% 100%;
+    min-height: 100vh;
+    filter: blur(3px) opacity(0.9);
+}
+
+.brand-wrapper {
+    top: 12%;
+    left: 15%;
+    background-color: #fff;
+    height: 83vh;
+    width: 70%;
+    border-radius: 40px;
+    box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    animation-name: appear;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-delay: 0.5s;
+    animation-iteration-count: 1;
+    animation-direction: normal;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+    overflow: hidden;
+}
+
+.nav-wrapper {
+    border-left: 0.2px solid black;
+    max-height: 50vh;
+}
+
+@media (max-width: 768px) {
+    .brand-wrapper{
+        width: 90%;
+        margin: 0;
+        left: 5%;
+    }
+}
+
+@keyframes appear {
+    0% {opacity: 0;}
+    100%{opacity: 1;}
+}
+
+.brand-wrapper-logo{
+    width: 100%;
+}
+
+.brand-wrapper-logo img {
+    width: 60%;
+    margin: 20px 20%;
+}
+
+
+.brand-wrapper::-webkit-scrollbar{
+    display: none;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.brand-content-wrapper {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.brand-nav button{
+    text-decoration: none;
+    color: inherit;
+    font-size: calc(0.7rem + 0.2vw);
+    text-transform: uppercase;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+}
+
+.content-card {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3%;
+    transform: translateY(800%);
+    transition: transform 0.6s ease-in-out;
+    position: absolute;
+    font-size: calc(0.6rem + 0.4vw);
+    left: 0%;
+}
+
+.content-card.active {
+    transform: translateY(0%);
+}
+
+.content-card h2 {
+    margin-bottom: 30px;
+}
+
+.product-category {
+    border: 1px solid black;
+    padding: 1vw;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease-in-out;
+}
+
+.product-category:hover {
+    transform: scale(0.98);
+}
+
+.brand-site-image {
+    width: 100px;
+}
+
+.product-title {
+    min-height: 20px;
+}
+
+
+
+@media (max-width: 767px) {
+  
+    .nav-wrapper {
+        position: absolute;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+        border-top: 1px solid rgba(0, 0, 0, 0.4);
+        border-left: none;
+    }
+
+    .brand-nav button{
+        margin-top: 3px;
+    }
+    .content-card.active {
+        margin-top: 115px;
+    }
+    .content-card h2 {
+        margin-bottom: 15px;
+    }
+}
+
+

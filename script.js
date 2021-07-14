@@ -6,6 +6,7 @@ let wrapper = document.querySelector('.hourglass-wrapper')
 
 let brandCards = document.querySelectorAll('.mobile-brand-desc')
 
+let brandLinks = document.querySelectorAll('.brand-nav-item')
 // Sliders brands
 
 document.addEventListener('scroll', ()=> {
@@ -40,10 +41,29 @@ var callback = function(){
     document.addEventListener("DOMContentLoaded", callback);
   }
 
-//  Brand site
+//  Brand listing
 
 brandCards.forEach(el =>{
     el.addEventListener('click', ()=>{
         el.classList.toggle('active')
     })
 })
+
+//  Brand site
+
+brandLinks.forEach((el, idx) => {
+   
+    el.addEventListener('click', ()=> {
+        brandLinks.forEach(link => {
+            link.style.color = 'inherit'
+        })
+        el.style.color = "green"
+        let cards = document.querySelectorAll('.content-card')
+        cards.forEach(card => {
+            card.classList.remove('active')
+        })
+        cards[idx].classList.add('active')
+    })
+})
+
+brandLinks[0].click()
